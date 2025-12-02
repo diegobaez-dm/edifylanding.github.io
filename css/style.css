@@ -99,12 +99,14 @@ html{
 
 body {
   font-family: var(--font-family-main);
+  padding-top: 60px;
 }
 
 a {
   text-decoration: none;
   font-style: normal;
   color: var(--color-dark);
+  
 }
 
 li {
@@ -161,17 +163,36 @@ address p {
   text-align: start;
 }
 
+.breadcrumbs{
+  padding-bottom: var(--space-sm);
+}
+
+.breadcrumbs__header{
+  color: var(--color-primary);
+}
+.breadcrumbs__header a{
+  color: var(--color-light);
+}
 
 
 /* ==========================
    MENU Navbar base
    ========================== */
 
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--color-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 nav {
   background-color: var(--color-light);
   color: var(--color-dark);
   padding: 1rem 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -323,7 +344,7 @@ nav {
 .hero__background {
   flex: 1;
   width: 100%;
-  background-image: url('https://images.unsplash.com/photo-1617761141732-d481912af1a9?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-image: url('/img/hero1.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -345,7 +366,7 @@ nav {
 
 
 .hero__title {
-  font-size: var(--font-h1);
+  font-size: var(--font-h1-sm);
   margin-bottom: var(--space-sm);
   line-height: 1;
   color: var(--color-light);
@@ -408,7 +429,6 @@ nav {
 
 .btn {
   display: inline-flex;
-  /* Permite contenido centrado y adaptable */
   align-items: center;
   justify-content: center;
 
@@ -645,7 +665,7 @@ nav {
   flex-direction: column;
 }
 
-/* Imagen: ocupa todo el ancho sin padding */
+
 .card__image {
   width: 100%;
   display: block;
@@ -683,14 +703,55 @@ nav {
 .card__cta {
   margin-top: var(--space-sm);
   align-self: flex-start;
-  /* evita que estire el ancho */
+
 }
+
+.card__actions {
+   display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+
+  align-items: center;    
+}
+
+.card__actions .btn,
+.card__actions .card__link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;           
+  min-width: 140px;      
+  padding: 0.6rem 1rem;
+  box-sizing: border-box;}
+
+
+.card__link {
+  text-align: start;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-bg-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.card__link:hover {
+  color: var(--color-primary);
+}
+
 
 
 /* -------------------------- */
 /* Contact Section Base Styles */
 /* -------------------------- */
+.contact__container{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 
+}
 .contact-section {
   margin: 0;
   padding: 3rem 0.5rem;
@@ -703,6 +764,8 @@ nav {
 }
 
 /* Formulario info agrupada */
+
+
 
 .contact-info {
     background: var(--color-secondary);
@@ -803,7 +866,7 @@ nav {
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: var(--color-primary); /* Compatible con la mayoría de navegadores */
+  accent-color: var(--color-primary); 
 }
 
 /* Texto del checkbox */
@@ -989,6 +1052,58 @@ nav {
   line-height: 1.4;
 }
 
+
+/* ===========================
+   SECCIÓN DE MARCAS — BASE
+   =========================== */
+
+.brands {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* GRID MOBILE FIRST: */
+.brands__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* MOBILE: 3 por fila */
+    gap: 1rem;
+    width: 100%;
+}
+
+
+.brand-item {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Imagen del logo */
+.brand-item img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    filter: grayscale(100%);    /* Blanco y negro */
+    opacity: 0.9;
+    transition: opacity .3s ease, filter .3s ease;
+}
+
+/* Hover suave */
+.brand-item img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    cursor: pointer;
+}
+
 /* ============ */
 /* MASONRY GRID */
 /* ============ */
@@ -1010,14 +1125,14 @@ nav {
 
 /* CONTENEDOR MASONRY */
 .masonry__grid {
-  column-count: 1;            /* Mobile first */
+  column-count: 1;            
   column-gap: var(--space-md);
   width: 100%;
 }
 
 /* ITEMS */
 .masonry__item {
-  break-inside: avoid;        /* Evita cortes feos */
+  break-inside: avoid;        
   margin-bottom: var(--space-md);
   display: block;
 }
@@ -1037,8 +1152,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;              /* Los items bajan automáticamente */
-  gap: 0.75rem;                 /* Espacio entre items */
+  flex-wrap: wrap;              
+  gap: 0.75rem;                 
   margin-top: 1.5rem;
 }
 
@@ -1066,7 +1181,7 @@ nav {
 
 .financing__grid {
   display: grid;
-  grid-template-columns: 1fr;   /* Mobile-first */
+  grid-template-columns: 1fr; 
   gap: var(--space-md);
 }
 
@@ -1081,7 +1196,7 @@ nav {
   padding: var(--space-sm);
 
   display: flex;
-  flex-direction: column;  /* Mobile: todo apilado */
+  flex-direction: column;  
   gap: var(--space-sm);
 
   transition: all 0.2s ease;
@@ -1161,6 +1276,15 @@ nav {
         height: 36px;
     }
 
+    .contact__container{
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+      box-sizing: border-box;
+
+}
+
     .about__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1199,7 +1323,7 @@ nav {
   }
 
   .hero__subtitle {
-    font-size: var(--font-h5-sm);
+    font-size: var(--font-h3-lg);
   }
 
   .hero__feautres {
@@ -1248,6 +1372,17 @@ nav {
   .categories__label {
     font-size: var(--font-body-lg);
   }
+
+      .brands {
+        padding: 3rem 2rem;
+        
+    }
+
+    .brands__grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 2rem;
+        
+    }
 
 
   .contact-layout {
@@ -1353,12 +1488,12 @@ nav {
 
   .company-values__item {
     font-size: var(--font-body);
-    min-width: 100px;          /* Toca si querés más balance visual */
+    min-width: 100px;          
     min-height: 52px;
   }
 
   .financing__grid {
-    grid-template-columns: repeat(2, 1fr);   /* 2 cards por fila */
+    grid-template-columns: repeat(2, 1fr);  
   }
 
 }
@@ -1378,6 +1513,19 @@ nav {
         height: 32px;
     }
 
+
+  .card__actions {
+    flex-direction: row;
+    justify-content: flex-start;  
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card__actions .btn,
+  .card__actions .card__link {
+    min-width: 0;   
+  }
+
   .hero__features {
     display: flex;
     flex-direction: row;
@@ -1388,6 +1536,16 @@ nav {
 
     padding: var(--space-md) var(--space-md);
   }
+
+  .hero__title {
+  font-size: var(--font-h1-lg);
+  margin-bottom: var(--space-md);
+
+}
+
+.hero__subtitle{
+  font-size: var(--font-body-md);
+}
 
 
   .hero__feature-number {
@@ -1447,21 +1605,26 @@ nav {
     font-size: var(--font-h1-md);
   }
 
+     .brands__grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.5rem;
+    }
+
 
     .financing__card {
-    flex-direction: row;          /* Imagen a la izquierda */
+    flex-direction: row;    
     align-items: center;
   }
 
   .financing__image-wrapper {
     width: 25%;
-    flex-shrink: 0;                /* Mantiene tamaño estable */
+    flex-shrink: 0;  
   }
 
   .financing__text {
     width: 75%;
     display: grid;
-    grid-template-columns: 1fr 1fr;  /* Info | Periodo */
+    grid-template-columns: 1fr 1fr;  
     gap: var(--space-lg);
   }
 
