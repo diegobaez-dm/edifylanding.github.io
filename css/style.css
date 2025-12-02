@@ -344,7 +344,7 @@ nav {
 .hero__background {
   flex: 1;
   width: 100%;
-  background-image: url('/img/hero1.webp');
+  background-image: url('img/hero1.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
