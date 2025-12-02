@@ -1073,11 +1073,13 @@ nav {
     grid-template-columns: repeat(3, 1fr); /* MOBILE: 3 por fila */
     gap: 1rem;
     width: 100%;
+    box-sizing: border-box;
 }
 
 
 .brand-item {
     width: 100%;
+    max-width: 7.2rem;
     aspect-ratio: 16 / 9; 
     background-color: #f3f3f3;
     display: flex;
@@ -1103,6 +1105,15 @@ nav {
     filter: grayscale(0%);
     cursor: pointer;
 }
+
+.brands-title{
+  font-size: var(--font-h4-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-align: center;
+  padding-bottom: var(--space-sm);
+}
+
 
 /* ============ */
 /* MASONRY GRID */
@@ -1496,6 +1507,15 @@ nav {
     grid-template-columns: repeat(2, 1fr);  
   }
 
+      .brands-title{
+      font-size: var(--font-h4-lg);
+      padding-bottom: var(--space-md);
+    }
+
+       .brand-item {
+      max-width: 12rem;
+    }
+
 }
 
 
@@ -1609,6 +1629,17 @@ nav {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 1.5rem;
     }
+
+    .brand-item {
+      max-width: 9.2rem;
+    }
+
+    .brands-title{
+      font-size: var(--font-h4-lg);
+      padding-bottom: var(--space-md);
+    }
+
+    
 
 
     .financing__card {
