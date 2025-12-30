@@ -711,7 +711,6 @@ nav {
   flex-direction: column;
   gap: 0.8rem;
   margin-top: 1rem;
-
   align-items: center;    
 }
 
@@ -720,24 +719,28 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto;           
+  width: 100%;           
   min-width: 140px;      
   padding: 0.6rem 1rem;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
 
 
 .card__link {
   text-align: start;
   padding: 0.8rem 1.2rem;
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-bg-dark);
+  font-weight: 600;
+  color: var(--color-light);
   text-decoration: none;
   transition: all 0.3s ease;
+  background-color: var(--color-primary);
+  border-radius: 58px;
+  gap: 0.20rem;
 }
 
 .card__link:hover {
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 
