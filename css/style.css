@@ -175,6 +175,7 @@ address p {
 }
 
 
+
 /* ==========================
    MENU Navbar base
    ========================== */
@@ -1354,6 +1355,105 @@ nav {
   color: var(--color-primary);
 }
 
+.saneamiento-items-txt{
+  text-align: start;
+  font-size: var(--font-body);
+}
+
+
+/*SANEAMIENTO*/
+
+.why-edify {
+  width: 100%;
+}
+
+.why-edify__title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.why-edify__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.why-edify__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.why-edify__icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.why-edify__item-title {
+  font-size: var(--font-body-lg, 1.05rem);
+  margin-bottom: 0.25rem;
+}
+
+.why-edify__content p {
+  font-size: var(--font-body);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.why-txt{
+  font-size: var(--font-h5-sm);
+  color: var(--color-light);
+  text-align: center;
+}
+
+
+.quote-section {
+  width: 100%;
+  padding: clamp(4rem, 8vw, 7rem) 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-secondary);
+}
+
+.quote-section__container {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.quote-section__title {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.quote-section__subtitle {
+  font-weight: 400;
+  line-height: 1.6;
+  padding-inline: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-light-300);
+}
+
+.quote-section__cta {
+  margin-top: 0.75rem;
+  align-self: center;
+}
+.cta-saneamiento{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* ==============*/
+
 
 /* ============================= */
 /*       MEDIA QUERIES           */
@@ -1362,6 +1462,12 @@ nav {
 /* Desktop */
 
 @media (min-width: 1024px) {
+
+  .cta-saneamiento{
+
+  flex-direction: row;
+
+}
 
    .whatsapp-btn {
         bottom: 2.5rem;
@@ -1620,8 +1726,40 @@ nav {
   max-width: 1024px;
 }
 
+
+
+/*===== SANEAMIENTO =====*/
+
+.saneamiento-items-txt{
+  text-align: center;
+  font-size: var(--font-body);
 }
 
+  .why-edify__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .why-edify__item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .why-edify__icon {
+    font-size: 2.4rem;
+  }
+
+  .quote-section__subtitle{
+    font-size: var(--font-h5-sm);
+  }
+
+  .txt-bold{
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+}
 
 @media (min-width: 767px) {
 
@@ -1763,5 +1901,10 @@ nav {
     grid-template-columns: 1fr 1fr;  
     gap: var(--space-lg);
   }
+
+  .saneamiento-items-txt{
+  text-align: center;
+  font-size: var(--font-body);
+}
 
 }
